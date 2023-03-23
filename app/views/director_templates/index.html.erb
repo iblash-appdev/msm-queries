@@ -5,10 +5,14 @@
   <tr>
     <td><%= a_thing.id %></td>
     <td>
-      <img src="https://robohash.org/"<%= a_thing.name %>>
+      <img src="https://robohash.org/png"<%= a_thing.name %>>
       </td>
     <td><%= a_thing.name %></td>
     <td><%= a_thing.bio %></td>
+    <td>
+      <a href="/directors/<%= a_thing.id %>" >
+      Show details
+    </td>
 
   </tr>
   <% end %>
