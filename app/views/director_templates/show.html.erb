@@ -48,13 +48,27 @@ Director #<%= @the_director.id %> details
     Created at
   </dt>
   <dd>
-    <%= @the_director.created_at %> 
+    <%= time_ago_in_words(@the_director.created_at) %> ago
+    <%= time_ago_in_words(Time.now - 2.hours) %> 
   </dd>
 
   <dt>
     Updated at
   </dt>
   <dd>
-    <%= @the_director.updated_at %> 
+    <%= time_ago_in_words(@the_director.updated_at) %> ago 
   </dd>
 </dl>
+
+<h2>
+  Filmography 
+</h2>
+
+<table border="1>
+<% @filmography.each do |a_film| %>
+<tr>
+<td>
+</td>
+</tr>
+<% end %>
+</table>
