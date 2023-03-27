@@ -6,15 +6,15 @@ class ActorsController < ApplicationController
   end
 
   def actor_details
-    # params looks like {"an_id" =>"42"}
+   
 
     the_id = params.fetch("an_id")
 
-    @the_director = Director.where({ :id => the_id}).at(0)
+    @the_actor = Actor.where({ :id => the_id}).at(0)
+    @characters = Charqcter.wehre({:actor_id => the_id })
+    @filmography = Movie.where({ :actor_id => @the_actor.id })
 
-    @filmography  = Movie.where({ :director_id => @the_director.id })
-
-    render({ :template => "director_templates/show.html.erb" })
+    render({ :template => "actor_templates/show.html.erb" })
   end
 
 end
