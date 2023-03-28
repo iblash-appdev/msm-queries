@@ -9,9 +9,10 @@ Actor #<%= @the_actor.id %> details
 <a href="/delete_actor/<%= @the_actor.id %> " class="btn btn-block btn-outline-secondary">
   Delete actor
   <small>(Building this link is not required. It's an optional stretch goal; but, you have the tools if you want to give it a try.)</small>
-</a>
+<a>
 
 <hr>
+
 <dl>
   <dt>
     Name
@@ -19,12 +20,14 @@ Actor #<%= @the_actor.id %> details
   <dd>
     <%= @the_actor.name %> 
   </dd>
+
   <dt>
     Dob
   </dt>
   <dd>
     <%= @the_actor.dob %> 
   </dd>
+
   <dt>
     Bio
   </dt>
@@ -56,11 +59,11 @@ Actor #<%= @the_actor.id %> details
 </dl>
 
 <h2>
-  Filmography 
+  Filmography
 </h2>
 
 <table border="1">
-<% @filmography.each do |a_film| %>
+
   <tr>
     <td>
       <%= a_film.id %>
@@ -78,9 +81,13 @@ Actor #<%= @the_actor.id %> details
       <% d = Director.where({ :id => a_film.director_id }).at(0) %>
       <%= d.name %>
     </td>
-     
     <td>
-      <a href="/movies/#{the_turgle.id}">
+   
+      <% c = Character.where({ :actor_id => the_id }).at(0)%>
+      <% c.name%>
+    </td>
+    <td>
+      <a href="">
         Show details
       </a>
     </td>
