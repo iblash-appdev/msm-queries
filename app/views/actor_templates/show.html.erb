@@ -63,7 +63,7 @@ Actor #<%= @the_actor.id %> details
 </h2>
 
 <table border="1">
-
+<% @filmography.each do |a_film| %>
   <tr>
     <td>
       <%= a_film.id %>
